@@ -3,8 +3,7 @@
 
 > 引入介绍（Introduction）
 
-p-datetime是一款可自由定制样式的手势解锁组件，支持web端移动端使用。
-通过npm安装步骤如下：
+p-datetime主要用于日期格式化
 
 ```javascript
 npm i p-datetime
@@ -34,7 +33,7 @@ npm i p-datetime
   d.getDate(`YYYY-MM-DD HH12:mm:ss APM `)
   
   let d1 = new DateTimeFormat({
-  	  datetime:new Date().getTime(),
+	  datetime:new Date().getTime(),
 	  format:`YYYY-MM-DD HH12:mm:ss APM `
   });
   d1.getDate();
