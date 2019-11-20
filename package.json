@@ -1,0 +1,34 @@
+{
+  "name": "datetime",
+  "version": "1.0.0",
+  "description": "util for datetime format",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/test",
+    "build": "webpack --color --config  webpack.build.config.js --progress "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://keaderzyp:keader1989@github.com/keaderzyp/datetime.git"
+  },
+  "keywords": [
+    "datetime",
+    "format",
+    "date",
+    "moment"
+  ],
+  "author": "LeoZhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keaderzyp/datetime/issues"
+  },
+  "homepage": "https://github.com/keaderzyp/datetime#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-loader": "^8.0.6",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
