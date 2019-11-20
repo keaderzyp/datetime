@@ -1,13 +1,13 @@
- # datetime-format
+ # p-datetime
 一款日期格式化工具
 
 > 引入介绍（Introduction）
 
-finger-unlocker是一款可自由定制样式的手势解锁组件，支持web端移动端使用。
+p-datetime是一款可自由定制样式的手势解锁组件，支持web端移动端使用。
 通过npm安装步骤如下：
 
 ```javascript
-npm i finger-unlocker
+npm i p-datetime
 ```
     
 ```html
@@ -18,65 +18,58 @@ npm i finger-unlocker
 		<title></title>
 	</head>
 	<body>
-		<div id="container"  ></div>
+		<script src="../lib/datetime-format.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			let d = new DateTimeFormat();
+			console.log(d.getDate(`YY-MM-DD APM HH12:m:s W `))
+		</script>
 	</body>
 </html>
 ```  
 ```javascript
-  import FingerUnlocker from 'finger-unlocker';
-  new FingerUnlocker({
-    el:document.querySelector("#container"),
-    options:{
-	    passwordType:'base64'
-    },
-    callback:{
-	    mouseUp(res){
-		    console.log(res.password);
-	    },
-	    touchEnd(res){
-		    console.log(res.password);
-	    }
-    }
-  })
+  import DateTimeFormat from 'p-datetime';
+  let d = new DateTimeFormat({
+	  datetime:new Date('2018-01-01'),
+  });
+  d.getDate(`YYYY-MM-DD HH12:mm:ss APM `)
+  
+  let d1 = new DateTimeFormat({
+  	  datetime:new Date().getTime(),
+	  format:`YYYY-MM-DD HH12:mm:ss APM `
+  });
+  d1.getDate();
+  let d2 = new DateTimeFormat();
+  d1.getDate();
 ```
 
 > 参数说明（Parameter description）
 
-Introduction of Overall Parameters
-| prop |  type|required|info|
+Introduction of constructor
+| prop |  type|required|default|
 |--|--|--|--|
-| el |  htmlElement|true|the container of finger-unlocker|
-| options |  object|false|Option configuration for finger-unlocker, please refer to the parameters of options for details |
-| styles |  object|false|The style sheet of canvas object can configure the style of canvas object itself according to the setting specification of CSS |
-| point |  object|false|Configure the styles of all gesture touch points. Refer to point's specific parameters for details. |
-| callback |  object|false|Callback events for components |
+| datetime |  Date||Number|false|new Date()|
+| format |  String|false| YYYY-MM-DD HH:mm:ss |
 
-Introduction of **options** 
-| prop |  type| required | default| info |
-|--|--|--|--|--|
-| width |  number|false|600|Canvas transverse physical pixels |
-| height |  number|false|600|Vertical physical pixels of canvas|
-| lineWidth |  number|false|20|Width of trajectory |
-| lineColor |  string|false|'#3370CC'|Color of Trajectory Line |
-| passwordType |  string|false|'none'|Encryption Type of Password，You can set 'md5','sha1','base64'|
-
-Introduction of **point** 
-| prop |  type| required | default| info |
-|--|--|--|--|--|
-| count |  number|false|3|The number of lattices is the cardinal number multiplied by the cardinal number |
-| r |  number|false|50|Radius of each circle,Invalid settings when available space is worth exceeding a point|
-| backgroundColor |  number|false|'#22DDDD'|Background color of dots |
-| shadow |  boolean|false|Whether to set shadows |
-| shadowColor |  string|false|'#22DDDD'|Shadow color|
-| border |  boolean|false|false|Whether to set the border|
-| borderColor |  string|false|'#3370CC'|Border Color|
-| centerPointR |  number|false|25'|The Radius of the active dot|
-| centerPointColor |  string|false|'#3370CC'|The color of the active dot|
-Introduction of **callback** 
-| prop |  type| required | default| info |
-|--|--|--|--|--|
-| mouseUp |  function|false|function(res){}|Callback of mouse button lifting event returns all object information of Finger Unlocker |
-| touchEnd |  function|false|function(res){}|Callbacks to finger-lift events return all object information for Finger Unlocker|
-
-
-
+Introduction of format
+| prop |  type| info |
+|--|--|--|
+| YYYY |  String | year |
+| YY |  String | year |
+| MM |  String | month |
+| M |  String | month |
+| DD |  String | date |
+| D |  String | date |
+| HH |  String | hour |
+| HH24 |  String | hour |
+| HH12 |  String | hour |
+| H |  String | hour |
+| H24 |  String | hour |
+| H12 |  String | hour |
+| mm |  String | minute |
+| mi |  String | minute |
+| m |  String | minute |
+| ss |  String | second |
+| s |  String | second |
+| WW |  String | week |
+| W |  String | week |
+| APM |  String | AP/PM |
