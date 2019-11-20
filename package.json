@@ -1,6 +1,6 @@
 {
   "name": "p-datetime",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "util for datetime format",
   "main": "index.js",
   "scripts": {
