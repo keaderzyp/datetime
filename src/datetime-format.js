@@ -86,5 +86,9 @@ class DateTimeFormat{
 		return this.formatDateTime;
 	}
 }
-window.DateTimeFormat = DateTimeFormat;
+try{
+	window.DateTimeFormat = DateTimeFormat;
+}catch(e){
+	//TODO handle the exception
+}
 module.exports = DateTimeFormat;
