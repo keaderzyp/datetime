@@ -90,5 +90,6 @@ try{
 	window.DateTimeFormat = DateTimeFormat;
 }catch(e){
 	//TODO handle the exception
+	
 }
 module.exports = DateTimeFormat;
