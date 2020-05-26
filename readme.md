@@ -33,7 +33,7 @@ npm i p-datetime
   d.getDate(`YYYY-MM-DD HH12:mm:ss APM `)
   
   let d1 = new DateTimeFormat({
-	  datetime:new Date().getTime(),
+	  datetime:new Date(),
 	  format:`YYYY-MM-DD HH12:mm:ss APM `
   });
   d1.getDate();
